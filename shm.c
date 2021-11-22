@@ -32,7 +32,18 @@ int shm_open(int id, char **pointer) {
 
 //you write this
 
+//acquire lock
 
+//check if shared page exists, if not kalloc() a new one
+//might need to use memset()
+
+//increment reference count
+
+//mappages() use this to map from virtual to physical memory
+
+//set pointer = VA
+
+//release lock
 
 
 return 0; //added to remove compiler warning -- you should decide what to return
@@ -42,7 +53,11 @@ return 0; //added to remove compiler warning -- you should decide what to return
 int shm_close(int id) {
 //you write this too!
 
+//don't forget to use locks here too
 
+//decrement reference count
+
+//if after decrementing, refcnt = 0, clear page 
 
 
 return 0; //added to remove compiler warning -- you should decide what to return
